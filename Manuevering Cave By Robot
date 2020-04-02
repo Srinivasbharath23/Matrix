@@ -1,0 +1,16 @@
+#include<stdio.h>
+int grid(int cr,int cc, int m,int n)
+{
+    if(cr > m-1 || cc > n-1)
+    return 0;
+    else if(cr == m-1 || cc == n-1)
+    return 1;
+    else
+    return (grid(cr,cc+1,m,n) + grid(cr+1,cc,m,n));
+}
+int main()
+{
+    int rows,columns,currow = 0, curcol = 0;
+    scanf("%d%d",&rows,&columns);
+    printf("%d",grid(currow,curcol,rows,columns));
+}
