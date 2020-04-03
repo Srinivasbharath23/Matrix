@@ -1,0 +1,34 @@
+int rowctr,colctr,matrixCounter,n;
+scanf("%d",&n);
+    for(matrixCounter=0; matrixCounter < n; matrixCounter++)
+    {
+        for(rowctr=0; rowctr<rows; rowctr++)
+        {
+            for(colctr=0; colctr<cols; colctr++)
+            {
+                scanf("%d",&matrixValues[matrixCounter][rowctr][colctr]);
+            }
+        }
+    }
+    for(rowctr=0; rowctr<rows; rowctr++)
+    {
+        for(colctr=0; colctr<cols; colctr++)
+        {
+            int sum = 0;
+            for(matrixCounter=0; matrixCounter<3; matrixCounter++)
+            {
+                sum += matrixValues[matrixCounter][rowctr][colctr];
+            }
+            resultmatrix[rowctr][colctr] = sum;
+        }
+    }
+    for(rowctr=0; rowctr<rows; rowctr++)
+    {
+        for(colctr=0; colctr<cols; colctr++)
+        {
+            printf("%d ", resultmatrix[rowctr][colctr]);
+        }
+        printf("\n");
+    }
+}
+
